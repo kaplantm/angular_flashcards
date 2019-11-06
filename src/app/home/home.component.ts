@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
   allCards: Array<iCard> = cards;
   cardCount: number = this.allCards.length;
   currentCardIndex: number = 0;
-  currentCard: Nullable<iCard>;
+  currentCard: iCard | null;
   cardFlipped: boolean = false;
   constructor() {}
 
@@ -34,6 +34,8 @@ export class HomeComponent implements OnInit {
     this.cardFlipped = false;
   }
   flipCard() {
+    console.log("flipCard");
+    document.querySelector("#card").classList.toggle("flip");
     this.cardFlipped = !this.cardFlipped;
   }
 
@@ -49,6 +51,7 @@ export class HomeComponent implements OnInit {
   }
 
   previousCard() {
+    console.log("previousCard");
     this.currentCardIndex -= 1;
     this.updateCurrentCard();
   }
