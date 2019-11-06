@@ -1,11 +1,15 @@
 <div class="inner-page-container">
   <div class="flip-container" id="card">
-    <div class="card-container flipper">
+    <div class="card-container flipper" id="flipper">
       <div class="front">
-        front
+        <h1>{{ currentCard.question }}</h1>
       </div>
       <div class="back">
-        back
+        <h1>{{ currentCard.question }}</h1>
+        <div>
+          <h2>{{ currentCard.answerHeader }}</h2>
+          <p>{{ currentCard.answer }}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -16,9 +20,7 @@
       [className]="currentCardIndex >= 1 ? 'previous' : ' previous hidden'"
       >Previous Question</span
     >
-    <!-- <span (click)="flipCard()" class="next">Flip Card2</span> -->
     <span (click)="flipCard()" class="next">Flip Card</span>
-
     <span
       (click)="nextCard()"
       [className]="

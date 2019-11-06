@@ -3,6 +3,8 @@
 .inner-page-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: space-between;
   flex: 1;
 }
 
@@ -29,40 +31,48 @@
 }
 
 .card-container {
+  flex-direction: row;
+  justify-content: center;
   padding: 3em;
+  align-items: center;
   border: 1px solid lightgray;
   margin: 3em 0em;
   flex: 1;
+  min-height: 60vh;
+  max-width: 80%;
 }
 
 // CSS Card Flip Animation
-// From https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_flip_card
+// From https://davidwalsh.name/css-flip
 
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
+  display: flex;
+  justify-content: center;
 }
 
 /* flip speed goes here */
 .flipper {
   transition: 0.6s;
   transform-style: preserve-3d;
-
-  position: relative;
+  &.noanimation {
+    transition: 0s;
+  }
 }
 
 /* hide back of pane during swap */
 .front,
 .back {
   backface-visibility: hidden;
-
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 /* front pane, placed above back */
 .front {
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   z-index: 2;
   /* for firefox 31 */
   transform: rotateY(0deg);
@@ -77,4 +87,13 @@
 // .flip-container.hover .flipper,
 .flip-container.flip .flipper {
   transform: rotateY(180deg);
+}
+
+.flip-container.flip .front,
+.flip-container .back {
+  display: none;
+}
+
+.flip-container.flip .back {
+  display: block;
 }

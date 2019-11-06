@@ -27,14 +27,26 @@ export class HomeComponent implements OnInit {
     console.log(this.currentCard);
   }
 
+  restoreCardAnimation() {
+    setTimeout(function() {
+      document.querySelector("#flipper").classList.remove("noanimation");
+    }, 10);
+  }
   setCardQuestionSideUp() {
+    document.querySelector("#flipper").classList.add("noanimation");
+    document.querySelector("#card").classList.remove("flip");
     this.cardFlipped = false;
+    this.restoreCardAnimation();
   }
+
   setCardAnswerSideUp() {
-    this.cardFlipped = false;
+    document.querySelector("#flipper").classList.add("noanimation");
+    document.querySelector("#card").classList.add("flip");
+    this.cardFlipped = true;
+    this.restoreCardAnimation();
   }
+
   flipCard() {
-    console.log("flipCard");
     document.querySelector("#card").classList.toggle("flip");
     this.cardFlipped = !this.cardFlipped;
   }
