@@ -1,0 +1,54 @@
+{
+  "cards": [
+    {
+      "question": 100,
+      "answerHeader": "100 Continue",
+      "answer": "The server, has received the request headers and the client should proceed to send the request body"
+    },
+    {
+      "question": 101,
+      "answerHeader": "101 Switching Protocols",
+      "answer": "The requester has asked the server to switch protocols and the server has agreed to do so."
+    },
+    {
+      "question": 102,
+      "answerHeader": "Processing (WebDAV; RFC 2518)",
+      "answer": "This code indicates that the server has received and is processing the request, but no response is available yet.  This prevents the client from timing out and assuming the request was lost."
+    },
+    {
+      "question": 103,
+      "answerHeader": "103 Early Hints (RFC 8297)",
+      "answer": "Used to return some response headers before final HTTP message."
+    },
+    {
+      "question": 200,
+      "answerHeader": "200 OK",
+      "answer": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request, the response will contain an entity describing or containing the result of the action."
+    },
+    {
+      "question": 201,
+      "answerHeader": "201 Created",
+      "answer": "The request has been fulfilled, resulting in the creation of a new resource."
+    },
+    {
+      "question": 202,
+      "answerHeader": "202 Accepted",
+      "answer": "The request has been accepted for processing, but the processing has not been completed. The request might or might not be eventually acted upon, and may be disallowed when processing occurs."
+    },
+    {
+      "question": 203,
+      "answerHeader": "203 Non-Authoritative Information (since HTTP/1.1)",
+      "answer": "The server is a transforming proxy (e.g. a Web accelerator) that received a 200 OK from its origin, but is returning a modified version of the origin's response."
+    },
+    {
+      "question": 204,
+      "answerHeader": "204 No Content",
+      "answer": "The server successfully processed the request and is not returning any content."
+    },
+    {
+      "question": 205,
+      "answerHeader": "205 Reset Content",
+      "answer": "The server successfully processed the request, but is not returning any content. Unlike a 204 response, this response requires that the requester reset the document view."
+    }
+  ]
+}

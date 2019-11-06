@@ -1,1 +1,26 @@
-<p>home works!</p>
+<div class="inner-page-container">
+  <div class="card-container">
+    <h1>{{ currentCard.question }}</h1>
+    <div [className]="cardFlipped ? '' : 'hidden'">
+      <h2>{{ currentCard.answerHeader }}</h2>
+      <p>{{ currentCard.answer }}</p>
+    </div>
+  </div>
+
+  <div class="card-nav">
+    <span
+      (click)="previousCard()"
+      [className]="currentCardIndex >= 1 ? 'previous' : ' previous hidden'"
+      >Previous Question</span
+    >
+    <span (click)="flipCard()" class="next">Flip Card</span>
+
+    <span
+      (click)="nextCard()"
+      [className]="
+        currentCardIndex < cardCount - 1 ? 'next' : ' previous hidden'
+      "
+      >Next Question</span
+    >
+  </div>
+</div>

@@ -1,0 +1,36 @@
+@import "src/variables.scss";
+
+.inner-page-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+
+  span {
+    color: white;
+    font-weight: bold;
+    padding: 0.3em 0.8em;
+    cursor: pointer;
+    user-select: none;
+
+    &.previous {
+      background: $purple-grey;
+    }
+
+    &.next {
+      background: $purple-medium-grey;
+    }
+  }
+}
+
+.card-container {
+  padding: 3em;
+  border: 1px solid lightgray;
+  margin: 3em 0em;
+  flex: 1;
+}
