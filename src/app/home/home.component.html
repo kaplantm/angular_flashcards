@@ -2,13 +2,23 @@
   <div class="flip-container" id="card">
     <div class="card-container flipper" id="flipper">
       <div class="front">
-        <h1>{{ currentCard.question }}</h1>
+        <h1>
+          {{ currentCard ? currentCard.question : "Failed to load Question" }}
+        </h1>
       </div>
       <div class="back">
-        <h1>{{ currentCard.question }}</h1>
+        <h1>
+          {{ currentCard ? currentCard.question : "Failed to load Question" }}
+        </h1>
         <div>
-          <h2>{{ currentCard.answerHeader }}</h2>
-          <p>{{ currentCard.answer }}</p>
+          <h2>
+            {{
+              currentCard ? currentCard.answerHeader : "Failed to load Answer"
+            }}
+          </h2>
+          <p>
+            {{ currentCard ? currentCard.answer : "" }}
+          </p>
         </div>
       </div>
     </div>
@@ -20,12 +30,14 @@
       [className]="currentCardIndex >= 1 ? 'previous' : ' previous hidden'"
       >Previous Question</span
     >
-    <span (click)="flipCard()" class="next">Flip Card</span>
+    <span
+      (click)="flipCard()"
+      [className]="currentCard ? 'flip-button' : 'flip-buttonn hidden'"
+      >Flip Card</span
+    >
     <span
       (click)="nextCard()"
-      [className]="
-        currentCardIndex < cardCount - 1 ? 'next' : ' previous hidden'
-      "
+      [className]="currentCardIndex < cardCount - 1 ? 'next' : ' next hidden'"
       >Next Question</span
     >
   </div>
