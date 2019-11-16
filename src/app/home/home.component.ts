@@ -3,8 +3,9 @@ import { Component, OnInit } from "@angular/core";
 import { QuizService } from "./quiz.service";
 
 interface iQuestionCard {
+  questionHeader?: string;
   question: string;
-  answerTitle?: string;
+  answerHeader?: string;
   answer: string;
   difficulty?: 1 | 2 | 3;
 }
